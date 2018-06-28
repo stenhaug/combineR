@@ -1,0 +1,28 @@
+Package: combineR
+Type: Package
+Title: A Package with Data and a Function to See Join Overlap Implications
+Version: 1.0
+Date: 2018-03-20
+Description: The combineR package will help one look at the overlap between multiple data frames and the implications of different types of joins.
+Authors@R: c(
+    person("Ben", "Stenhaug", , "benastenhaug@gmail.com", c("aut", "cre")),
+    person("Karly", "Jerman", , "karlyjerman@gmail.com", role = "aut")
+    )
+Depends: R (>= 3.4)
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+Imports:
+	dplyr,
+	ggplot2,
+	magrittr,
+	purrr,
+	stats,
+	stringr,
+	tibble,
+	reshape
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown, testthat
+VignetteBuilder: knitr
