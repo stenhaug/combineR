@@ -64,7 +64,7 @@ explain_NAs(math)
 #> [[3]]
 ```
 
-![](README-unnamed-chunk-4-1.png)<!-- -->
+![](https://github.com/stenhaug/combineR/blob/master/README-unnamed-chunk-4-1.png)<!-- -->
 
     #> 
     #> [[4]]
