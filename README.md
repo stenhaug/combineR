@@ -20,12 +20,12 @@ devtools::install_github("stenhaug/combineR")
 ``` r
 library(combineR)
 library(tidyverse) # most useful with the tidyverse
-#> ── Attaching packages ───────────────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ──────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.0.0          ✔ purrr   0.2.5     
 #> ✔ tibble  1.4.2          ✔ dplyr   0.7.5.9000
 #> ✔ tidyr   0.8.1          ✔ stringr 1.3.1     
 #> ✔ readr   1.1.1          ✔ forcats 0.3.0
-#> ── Conflicts ──────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ─────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -64,12 +64,12 @@ explain_NAs(math)
 #> [[3]]
 ```
 
-![](https://github.com/stenhaug/combineR/blob/master/README-unnamed-chunk-4-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
 
     #> 
     #> [[4]]
 
-![](README-unnamed-chunk-4-2.png)<!-- -->
+![](man/figures/README-unnamed-chunk-4-2.png)<!-- -->
 
 ## count\_keys
 
@@ -131,12 +131,12 @@ get_all_missing(demographics, math, ell, keys = c("student_id", "year"))
 #> [[2]]
 ```
 
-![](README-unnamed-chunk-6-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-6-1.png)<!-- -->
 
     #> 
     #> [[3]]
 
-![](README-unnamed-chunk-6-2.png)<!-- -->
+![](man/figures/README-unnamed-chunk-6-2.png)<!-- -->
 
 ## Example insights
 
