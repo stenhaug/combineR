@@ -44,7 +44,7 @@ explain_rows(demographics, math, ell)
 
 explain_NAs gives a report of nas in a data set
 
-```{r, fig.width = 8}
+```{r}
 explain_NAs(math)
 ```
 
@@ -64,7 +64,7 @@ The get_all_missing function lets you specify all of the data frames that you ar
 
 This function outputs a table and two plots to visualize the information. Here, we chose to visualize the combination of all three given datasets.
 
-```{r, fig.width = 8}
+```{r}
 get_all_missing(demographics, math, ell, keys = c("student_id", "year"))
 ```
 
