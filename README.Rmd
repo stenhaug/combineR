@@ -1,0 +1,80 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# combineR
+
+R package to understand overlap between multiple data frames and the implications of different types of joins.
+
+## Installation
+
+You can install combineR from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("stenhaug/combineR")
+```
+
+## Getting started
+
+```{r}
+library(combineR)
+library(tidyverse) # most useful with the tidyverse
+```
+
+## explain_rows
+
+explain_rows gives the total number of rows, unique rows, and columns in each data frame:
+
+```{r}
+explain_rows(demographics, math, ell)
+```
+
+## explain_NAs
+
+explain_NAs gives a report of nas in a data set
+
+```{r, fig.width = 8}
+explain_NAs(math)
+```
+
+## count_keys
+
+The next function is count_keys. You give this as many data frames as you want and the key and it tells you how many unique values are in each data frame for the keys you specify. Here it is done for all three available datasets.
+
+```{r}
+count_keys(demographics, math, ell, keys = c("student_id", "year"))
+```
+
+## get_all_missing
+
+When we do joins, there are two types of missing values that come up. The first are missing values that are hard coded. The second are missing values that are generated when we do a join. 
+
+The get_all_missing function lets you specify all of the data frames that you are interested in. You specify the keys (each data frame must have at least one of the keys in it). And then it tells you if you were to do all full_joins, in which variables you would see missing values and if they would come from being hard coded or from the join. 
+
+This function outputs a table and two plots to visualize the information. Here, we chose to visualize the combination of all three given datasets.
+
+```{r, fig.width = 8}
+get_all_missing(demographics, math, ell, keys = c("student_id", "year"))
+```
+
+## Example insights
+
+The goal of combineR is to generate insights like the following:
+
+1. There are a total of X unique students in the data.
+
+1. Y% of students in demographic data are in the ell data while Z% of students in the state test data are in the math data. 
+
+1. If we want to create a completely non-missing dataset that includes gender and age from state demographics data, ell score and student id from ell data, and math score from the math data this will include XX students. YY students were dropped because they were in the demographic data but in neither of the other data sets.
+ZZ students were in all three data frames but had an NA in the math score variable from the math data.
